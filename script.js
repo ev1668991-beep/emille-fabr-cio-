@@ -1,34 +1,132 @@
-const presentes = [
-    "Máquina de lavar roupas", "Micro-ondas", "Sofá", "Mesa", 
-    "Armário de cozinha", "Filtro elétrico", "Air Fryer", 
-    "Tanquinho", "Forno", "Rack para TV", "Espaço Extra 1", "Espaço Extra 2"
-];
+// =====================================
+// LISTA DE PRESENTES - CASAMENTO
+// Emille & Fabricio ❤️
+// =====================================
 
-const container = document.getElementById('lista-presentes');
 
-function renderizar() {
-    container.innerHTML = '';
-    const selecionados = JSON.parse(localStorage.getItem('presentesEscolhidos')) || {};
-    
-    presentes.forEach((item, index) => {
-        const div = document.createElement('div');
-        div.className = 'card' + (selecionados[index] ? ' escolhido' : '');
-        div.innerHTML = `
-            <img src="https://via.placeholder.com/250" alt="${item}">
-            <h3>${item}</h3>
-            ${selecionados[index] ? '<p>Presente escolhido ❤️</p>' : `<button onclick="escolher(${index})">Eu vou dar este presente</button>`}
-        `;
-        container.appendChild(div);
+// Quando o site abrir, verifica presentes já escolhidos
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    let presentesEscolhidos = JSON.parse(
+        localStorage.getItem("presentesEscolhidos")
+    ) || [];
+
+
+    let botoes = document.querySelectorAll(
+        ".presente-card button"
+    );
+
+
+    botoes.forEach(function(botao){
+
+
+        let nomePresente = botao.parentElement.querySelector("h3").innerText;
+
+
+        if(presentesEscolhidos.includes(nomePresente)){
+
+
+            bloquearPresente(botao);
+
+        }
+
+
     });
-}
 
-function escolher(index) {
-    if (confirm("Tem certeza que deseja escolher este presente?")) {
-        const selecionados = JSON.parse(localStorage.getItem('presentesEscolhidos')) || {};
-        selecionados[index] = true;
-        localStorage.setItem('presentesEscolhidos', JSON.stringify(selecionados));
-        renderizar();
+
+});
+
+
+
+
+
+
+// =====================================
+// ESCOLHER PRESENTE
+// =====================================
+
+
+function escolherPresente(botao, presente){
+
+
+
+    let confirmar = confirm(
+
+    "Tem certeza que deseja escolher este presente?"
+
+    );
+
+
+
+    if(confirmar){
+
+
+
+        let presentesEscolhidos = JSON.parse(
+
+            localStorage.getItem("presentesEscolhidos")
+
+        ) || [];
+
+
+
+        presentesEscolhidos.push(presente);
+
+
+
+        localStorage.setItem(
+
+            "presentesEscolhidos",
+
+            JSON.stringify(presentesEscolhidos)
+
+        );
+
+
+
+        bloquearPresente(botao);
+
+
+
+        alert(
+
+        "Presente escolhido com carinho ❤️"
+
+        );
+
+
     }
+
+
+
 }
 
-renderizar();
+
+
+
+
+
+// =====================================
+// BLOQUEAR PRESENTE
+// =====================================
+
+
+function bloquearPresente(botao){
+
+
+    botao.innerHTML =
+
+    "Presente escolhido ❤️";
+
+
+
+    botao.disabled = true;
+
+
+
+    botao.classList.add("escolhido");
+
+
+
+}

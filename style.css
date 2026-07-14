@@ -226,3 +226,507 @@ nav ul li a:hover {
     font-weight: bold;
 
 }
+/* ================= SEÇÕES GERAIS ================= */
+
+.historia,
+.presentes,
+.mensagem {
+
+    padding: 90px 10%;
+
+    text-align: center;
+
+}
+
+
+.historia h2,
+.presentes h2,
+.mensagem h2 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 55px;
+
+    color: #071d4d;
+
+    margin-bottom: 20px;
+
+}
+
+
+.linha {
+
+    width: 80px;
+
+    height: 3px;
+
+    background: #d8b35a;
+
+    margin: 0 auto 35px;
+
+}
+
+
+.historia p,
+.mensagem p {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    color: #444;
+
+}
+
+
+/* ================= LISTA DE PRESENTES ================= */
+
+
+.presentes {
+
+    background: #f1f3f8;
+
+}
+
+
+.texto-presentes {
+
+    max-width: 900px;
+
+    margin: 0 auto 50px;
+
+    line-height: 1.9;
+
+    color: #555;
+
+}
+
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+/* CARTÃO */
+
+.card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px 25px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    transition: .4s;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-10px);
+
+}
+
+
+.icone {
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.card h3 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 32px;
+
+    color: #071d4d;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* BOTÃO DOS PRESENTES */
+
+
+.btn-presente {
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    background: #071d4d;
+
+    color: white;
+
+    font-size: 14px;
+
+    transition: .3s;
+
+}
+
+
+.btn-presente:hover {
+
+    background: #d8b35a;
+
+    transform: scale(1.05);
+
+}
+
+
+/* PRESENTE ESCOLHIDO */
+
+
+.card.escolhido {
+
+    background: #071d4d;
+
+    color: white;
+
+}
+
+
+.card.escolhido h3 {
+
+    color: #f0d48a;
+
+}
+
+
+.card.escolhido .icone {
+
+    transform: scale(1.1);
+
+}
+
+
+.card.escolhido .btn-presente {
+
+    display: none;
+
+}
+
+
+.escolhido {
+
+    display: block;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
+    color: #d8b35a;
+
+    font-size: 18px;
+
+}
+
+
+/* ================= MENSAGEM PADRINHOS ================= */
+
+
+.mensagem {
+
+    background: white;
+
+}
+
+
+/* ================= RODAPÉ ================= */
+
+
+footer {
+
+    background: #071d4d;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+}
+
+
+footer h2 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 35px;
+
+    font-weight: normal;
+
+}
+
+
+footer h1 {
+
+    color: #e8c97a;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 55px;
+
+    margin: 10px;
+
+}
+
+
+footer p {
+
+    font-size: 18px;
+
+}
+
+
+/* ================= ANIMAÇÕES ================= */
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(40px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+.card,
+.historia,
+.mensagem {
+
+    animation: aparecer 1s ease;
+
+}
+/* ================= RESPONSIVIDADE CELULAR ================= */
+
+
+@media (max-width: 768px) {
+
+
+    header {
+
+        position: absolute;
+
+    }
+
+
+    nav {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+
+    }
+
+
+    .logo {
+
+        font-size: 28px;
+
+    }
+
+
+    nav ul {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+
+    }
+
+
+    nav ul li a {
+
+        font-size: 13px;
+
+    }
+
+
+
+    .hero h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .versiculo {
+
+        font-size: 15px;
+
+    }
+
+
+    .boas-vindas {
+
+        font-size: 15px;
+
+    }
+
+
+    .botao-principal {
+
+        padding: 12px 25px;
+
+    }
+
+
+
+    .contador h2 {
+
+        font-size: 38px;
+
+    }
+
+
+    #contador {
+
+        font-size: 25px;
+
+    }
+
+
+
+    .historia h2,
+    .presentes h2,
+    .mensagem h2 {
+
+        font-size: 42px;
+
+    }
+
+
+    .historia,
+    .presentes,
+    .mensagem {
+
+        padding: 70px 20px;
+
+    }
+
+
+    .card {
+
+        padding: 30px 20px;
+
+    }
+
+
+    .card h3 {
+
+        font-size: 27px;
+
+    }
+
+
+    footer h1 {
+
+        font-size: 42px;
+
+    }
+
+}
+
+
+/* ================= PEQUENOS DETALHES ================= */
+
+
+::selection {
+
+    background: #d8b35a;
+
+    color: white;
+
+}
+
+
+a {
+
+    transition: .3s;
+
+}
+
+
+button {
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+body::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+
+body::-webkit-scrollbar-track {
+
+    background: #f1f1f1;
+
+}
+
+
+body::-webkit-scrollbar-thumb {
+
+    background: #071d4d;
+
+    border-radius: 20px;
+
+}
